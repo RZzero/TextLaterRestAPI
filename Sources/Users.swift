@@ -12,18 +12,24 @@ public class Users {
 
 	// Container for array of type User
 	var data = [User]()
-	var that = ""
+
+  public func fetchRafa(){
+    let rafael = User(firstName: "Leafar",secondName: "Zero", lastName: "Coolio")
+    data.append(rafael)
+  }
+
 
 	init(){
-        mysql = MySQL() // Create an instance of MySQL to work with
 
-        let connected = mysql.connect(host: testHost, user: testUser, password: testPassword, db: testDB)
+      mysql = MySQL() // Create an instance of MySQL to work with
 
-        guard connected else {
-            // verify we connected successfully
-            print(mysql.errorMessage())
-            return
-        }
+      let connected = mysql.connect(host: testHost, user: testUser, password: testPassword, db: testDB)
+
+      guard connected else {
+          // verify we connected successfully
+          print(mysql.errorMessage())
+          return
+      }
 	}
 
 	// A simple JSON encoding function for listing data members.
@@ -31,10 +37,7 @@ public class Users {
 	public func list() -> String {
 		return toString()
 	}
-	public func giveMeOneUserID() -> String{
-		return that
-	}
-  
+
 	// Accepts the HTTPRequest object and adds a new User from post params.
 	public func addUser(_ request: HTTPRequest) -> String {
 		let new = User(
@@ -42,29 +45,21 @@ public class Users {
       secondName: request.param(name: "secondName")!,
 			lastName: request.param(name: "lastName")!
 		)
-		do{
-					_ = mysql.connect()
-		let query = "INSERT INTO USER (name,secondName, lastName) VALUES('\(new.firstName)','\(new.secondName)','\(new.lastName)')"
-
-		 _ = mysql.query(statement: query)
-		print(query)
-
-		}
-		defer {
-          mysql.close() //This defer block makes sure we terminate the connection once finished, regardless of the result
-        }
-
-        _ = mysql.connect()
-
-        let query = "SELECT iduser FROM USER WHERE name= '\(new.firstName)' AND lastname = '\(new.lastName)' ORDER BY iduser DESC LIMIT 1"
-        _ = mysql.query(statement: query)
-        print(query)
-        let results = mysql.storeResults()
-        results?.forEachRow(callback: {(row) in
-            that = row[0] ?? ""})
-
+		// do{
+		// 			_ = mysql.connect()
+		// let query = "INSERT INTO USER (name,secondName, lastName) VALUES('\(new.firstName)','\(new.secondName)','\(new.lastName)')"
+    //
+		//  _ = mysql.query(statement: query)
+		// print(query)
+    //
+		// }
+		// defer {
+    //       mysql.close() //This defer block makes sure we terminate the connection once finished, regardless of the result
+    //     }
+    //
+    //     _ = mysql.connect()
 		data.append(new)
-		return that
+    return toString()
 	}
 
 	// Convenient encoding method that returns a string from JSON objects.

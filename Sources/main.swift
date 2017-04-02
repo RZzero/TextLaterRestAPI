@@ -27,39 +27,39 @@ routes.add(method: .get, uri: "/", handler: {
 ----------------------------------------------------------------------------------
 */
 
-// Adding a route to handle the GET people list URL
+// GET USER METHOD
 routes.add(method: .get, uri: "/api/v1/users", handler: {
 	request, response in
 
-	//let user = Users()
+	let user = Users()
 	//user.fetchUserFirstTime()
 	// Setting the response content type explicitly to application/json
-
+  user.fetchRafa()
 	response.setHeader(.contentType, value: "application/json")
 	// Setting the body response to the JSON list generated
-  var manito = ["Rafael", "Pedro", "Maria"]
-	//response.appendBody("Manito")
-	// Signalling that the request is completed
+
+  response.appendBody(string: user.list())
+
 	response.completed()
 	}
 )
 
-// // Adding a route to handle the POST people add URL, with post body params
-// routes.add(method: .post, uri: "/api/v1/users", handler: {
-// 	request, response in
-//
-// 	//let people = People()
-// 	let user = Users()
-//
-// 	// Setting the response content type explicitly to application/json
-// 	response.setHeader(.contentType, value: "application/json")
-//
-// 	// // Adding a new "person", passing the complete HTTPRequest object to the function.
-// 	response.appendBody(string: user.add(request))
-// 	// Signalling that the request is completed
-// 	response.completed()
-// 	}
-// )
+// POST User METHOD
+routes.add(method: .post, uri: "/api/v1/users", handler: {
+	request, response in
+
+	//let people = People()
+	let user = Users()
+
+	// Setting the response content type explicitly to application/json
+	response.setHeader(.contentType, value: "application/json")
+
+	// // Adding a new "person", passing the complete HTTPRequest object to the function.
+	response.appendBody(string: user.addUser(request))
+	// Signalling that the request is completed
+	response.completed()
+	}
+)
 
 // Add the routes to the server.
 server.addRoutes(routes)
