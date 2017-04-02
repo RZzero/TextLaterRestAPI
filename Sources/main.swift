@@ -23,12 +23,12 @@ routes.add(method: .get, uri: "/", handler: {
 
 /*
 ----------------------------------------------------------------------------------
-                     				USERS
+                     				Messages
 ----------------------------------------------------------------------------------
 */
 
 // GET USER METHOD
-routes.add(method: .get, uri: "/api/v1/users", handler: {
+routes.add(method: .get, uri: "/api/v1/messages", handler: {
 	request, response in
 
 	let user = Users()

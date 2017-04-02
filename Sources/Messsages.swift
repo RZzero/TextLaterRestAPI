@@ -9,9 +9,7 @@ public class Users {
     let testDB = ""
     var mysql: MySQL!
 
-
-	// Container for array of type User
-	var data = [User]()
+	var data = [Message]()
 
   public func fetchRafa(){
     let rafael = User(firstName: "Leafar",secondName: "Zero", lastName: "Coolio")
@@ -40,10 +38,14 @@ public class Users {
 
 	// Accepts the HTTPRequest object and adds a new User from post params.
 	public func addUser(_ request: HTTPRequest) -> String {
-		let new = User(
-			firstName: request.param(name: "firstName")!,
-      secondName: request.param(name: "secondName")!,
-			lastName: request.param(name: "lastName")!
+		let new = Message(
+      idMessage: request.param(name: "idMessage")!,
+      sender: request.param(name: "sender")!,
+      platform: request.param(name: "platform")!,
+      subject: request.param(name: "subject")!,
+      content: request.param(name: "content")!,
+      timeToSend: request.param(name: "timeToSend")!,
+      messageStatus: request.param(name: "messageStatus")!
 		)
 		// do{
 		// 			_ = mysql.connect()
