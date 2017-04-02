@@ -28,34 +28,34 @@ routes.add(method: .get, uri: "/", handler: {
 */
 
 // GET USER METHOD
-routes.add(method: .get, uri: "/api/v1/messages", handler: {
+routes.add(method: .get, uri: "/api/v1/message", handler: {
 	request, response in
 
-	let user = Users()
-	//user.fetchUserFirstTime()
+	let message = Messages()
+
 	// Setting the response content type explicitly to application/json
-  user.fetchRafa()
+  message.fetchMyMessages()
 	response.setHeader(.contentType, value: "application/json")
 	// Setting the body response to the JSON list generated
 
-  response.appendBody(string: user.list())
+  response.appendBody(string: message.list())
 
 	response.completed()
 	}
 )
 
 // POST User METHOD
-routes.add(method: .post, uri: "/api/v1/users", handler: {
+routes.add(method: .post, uri: "/api/v1/message", handler: {
 	request, response in
 
 	//let people = People()
-	let user = Users()
+	let message = Message()
 
 	// Setting the response content type explicitly to application/json
 	response.setHeader(.contentType, value: "application/json")
 
 	// // Adding a new "person", passing the complete HTTPRequest object to the function.
-	response.appendBody(string: user.addUser(request))
+	response.appendBody(string: message.addMessage(request))
 	// Signalling that the request is completed
 	response.completed()
 	}
