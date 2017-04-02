@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/home/freedom/Desktop/TextLaterRestAPI/.build/debug/TextLaterRestAPI.build/master.swiftdeps"
+  },
+  "/home/freedom/Desktop/TextLaterRestAPI/Sources/main.swift": {
+    "dependencies": "/home/freedom/Desktop/TextLaterRestAPI/.build/debug/TextLaterRestAPI.build/main.d",
+    "object": "/home/freedom/Desktop/TextLaterRestAPI/.build/debug/TextLaterRestAPI.build/main.swift.o",
+    "swiftmodule": "/home/freedom/Desktop/TextLaterRestAPI/.build/debug/TextLaterRestAPI.build/main~partial.swiftmodule",
+    "swift-dependencies": "/home/freedom/Desktop/TextLaterRestAPI/.build/debug/TextLaterRestAPI.build/main.swiftdeps"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/home/freedom/Desktop/TextLaterRestAPI/.build/debug/MySQL.build/master.swiftdeps"
+  },
+  "/home/freedom/Desktop/TextLaterRestAPI/Packages/MySQL-2.1.2/Sources/MySQL/MySQL.swift": {
+    "dependencies": "/home/freedom/Desktop/TextLaterRestAPI/.build/debug/MySQL.build/MySQL.d",
+    "object": "/home/freedom/Desktop/TextLaterRestAPI/.build/debug/MySQL.build/MySQL.swift.o",
+    "swiftmodule": "/home/freedom/Desktop/TextLaterRestAPI/.build/debug/MySQL.build/MySQL~partial.swiftmodule",
+    "swift-dependencies": "/home/freedom/Desktop/TextLaterRestAPI/.build/debug/MySQL.build/MySQL.swiftdeps"
+  }
+}
