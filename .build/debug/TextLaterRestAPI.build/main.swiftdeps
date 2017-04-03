@@ -5,18 +5,18 @@ provides-top-level:
 provides-nominal:
 provides-member:
 depends-top-level:
-- "AssignmentPrecedence"
-- "Messages"
-- "PerfectError"
-- "Routes"
-- "StringLiteralType"
 - "server"
-- "print"
-- "routes"
-- "HTTPServer"
 - "UnicodeScalarType"
-- "IntegerLiteralType"
+- "HTTPServer"
+- "routes"
+- "Messages"
+- "Routes"
 - "FloatLiteralType"
+- "IntegerLiteralType"
+- "PerfectError"
+- "AssignmentPrecedence"
+- "StringLiteralType"
+- "print"
 depends-member:
 - ["Ps9AnyObject", "addMessage"]
 - ["Ps9AnyObject", "addRoutes"]
@@ -198,7 +198,7 @@ depends-external:
 - "/usr/include/mysql/mysql_com.h"
 - "/usr/include/mysql/mysql_version.h"
 - "/usr/include/mysql/mysql.h"
+- "/home/freedom/Desktop/TextLaterRestAPI/Packages/PerfectHTTPServer-2.0.9/Sources/CHTTPParser/include/module.modulemap"
 - "/home/freedom/Desktop/TextLaterRestAPI/.build/debug/PerfectHTTPServer.swiftmodule"
 - "/home/freedom/Desktop/TextLaterRestAPI/Packages/PerfectHTTPServer-2.0.9/Sources/CHTTPParser/include/http_parser.h"
-- "/home/freedom/Desktop/TextLaterRestAPI/Packages/PerfectHTTPServer-2.0.9/Sources/CHTTPParser/include/module.modulemap"
 interface-hash: "4fc105f58db03a51a3a1ad0413f49a76"

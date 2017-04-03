@@ -27,7 +27,7 @@ routes.add(method: .get, uri: "/", handler: {
 ----------------------------------------------------------------------------------
 */
 
-// GET USER METHOD
+// POST FOR GETTING USER MESSAGES
 routes.add(method: .post, uri: "/api/v1/message/mymessages", handler: {
 	request, response in
 
@@ -48,13 +48,11 @@ routes.add(method: .post, uri: "/api/v1/message/mymessages", handler: {
 routes.add(method: .post, uri: "/api/v1/message/", handler: {
 	request, response in
 
-	//let people = People()
 	let message = Messages()
 
 	// Setting the response content type explicitly to application/json
 	response.setHeader(.contentType, value: "application/json")
 
-	// // Adding a new "person", passing the complete HTTPRequest object to the function.
 	response.appendBody(string: message.addMessage(request))
 	// Signalling that the request is completed
 	response.completed()

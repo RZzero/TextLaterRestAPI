@@ -7,14 +7,15 @@ provides-member:
 - ["C16TextLaterRestAPI7Message", ""]
 depends-top-level:
 - "String"
-- "AssignmentPrecedence"
-- "StringLiteralType"
-- "JSONConvertibleObject"
-- "Message"
-- !private "Dictionary"
 - !private "IntegerLiteralType"
 - !private "FloatLiteralType"
+- "Message"
+- !private "Dictionary"
+- "StringLiteralType"
+- "AssignmentPrecedence"
+- "JSONConvertibleObject"
 depends-member:
+- ["Ps9AnyObject", "ToM"]
 - ["Ps9AnyObject", "content"]
 - !private ["Ps9AnyObject", "getJSONValue"]
 - ["Ps9AnyObject", "getJSONValues"]
@@ -57,6 +58,7 @@ depends-member:
 - !private ["Ps13IndexableBase", "Key"]
 - !private ["Ps13IndexableBase", "Value"]
 - !private ["P10PerfectLib15JSONConvertible", "Key"]
+- ["P10PerfectLib15JSONConvertible", "ToM"]
 - !private ["P10PerfectLib15JSONConvertible", "Value"]
 - ["P10PerfectLib15JSONConvertible", "content"]
 - !private ["P10PerfectLib15JSONConvertible", "getJSONValue"]
@@ -72,6 +74,7 @@ depends-member:
 - ["P10PerfectLib15JSONConvertible", "timeToSend"]
 - ["P10PerfectLib15JSONConvertible", ""]
 - ["C10PerfectLib21JSONConvertibleObject", "String"]
+- ["C10PerfectLib21JSONConvertibleObject", "ToM"]
 - ["C10PerfectLib21JSONConvertibleObject", "content"]
 - ["C10PerfectLib21JSONConvertibleObject", "deinit"]
 - !private ["C10PerfectLib21JSONConvertibleObject", "getJSONValue"]
@@ -88,6 +91,7 @@ depends-member:
 - ["C10PerfectLib21JSONConvertibleObject", ""]
 - ["Ps25LosslessStringConvertible", "init"]
 - ["C16TextLaterRestAPI7Message", "String"]
+- ["C16TextLaterRestAPI7Message", "ToM"]
 - ["C16TextLaterRestAPI7Message", "content"]
 - ["C16TextLaterRestAPI7Message", "deinit"]
 - !private ["C16TextLaterRestAPI7Message", "getJSONValue"]
@@ -214,7 +218,7 @@ depends-external:
 - "/usr/include/mysql/mysql_com.h"
 - "/usr/include/mysql/mysql_version.h"
 - "/usr/include/mysql/mysql.h"
+- "/home/freedom/Desktop/TextLaterRestAPI/Packages/PerfectHTTPServer-2.0.9/Sources/CHTTPParser/include/module.modulemap"
 - "/home/freedom/Desktop/TextLaterRestAPI/.build/debug/PerfectHTTPServer.swiftmodule"
 - "/home/freedom/Desktop/TextLaterRestAPI/Packages/PerfectHTTPServer-2.0.9/Sources/CHTTPParser/include/http_parser.h"
-- "/home/freedom/Desktop/TextLaterRestAPI/Packages/PerfectHTTPServer-2.0.9/Sources/CHTTPParser/include/module.modulemap"
-interface-hash: "ae1209c3aea1ec0192d25fb5c99a0577"
+interface-hash: "746ecc80a1f56fdd9cfcdc5a66390faa"

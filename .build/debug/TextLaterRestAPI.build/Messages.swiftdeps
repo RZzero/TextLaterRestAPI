@@ -6,22 +6,23 @@ provides-nominal:
 provides-member:
 - ["C16TextLaterRestAPI8Messages", ""]
 depends-top-level:
-- "Messages"
-- "Message"
 - !private "??"
-- "IntegerLiteralType"
-- !private "print"
+- !private "UnicodeScalarType"
 - "FloatLiteralType"
 - "HTTPRequest"
-- !private "UnicodeScalarType"
+- "IntegerLiteralType"
 - "AssignmentPrecedence"
-- "String"
+- !private "print"
+- "Messages"
 - "MySQL"
 - "StringLiteralType"
+- "Message"
+- "String"
 depends-member:
 - ["Ps9AnyObject", "Message"]
 - !private ["Ps9AnyObject", "MySQL"]
 - !private ["Ps9AnyObject", "String"]
+- !private ["Ps9AnyObject", "ToM"]
 - !private ["Ps9AnyObject", "close"]
 - !private ["Ps9AnyObject", "connect"]
 - !private ["Ps9AnyObject", "content"]
@@ -224,6 +225,7 @@ depends-member:
 - !private ["P10PerfectLib15JSONConvertible", "Iterator"]
 - !private ["P10PerfectLib15JSONConvertible", "Stride"]
 - !private ["P10PerfectLib15JSONConvertible", "SubSequence"]
+- !private ["P10PerfectLib15JSONConvertible", "ToM"]
 - !private ["P10PerfectLib15JSONConvertible", "_DisabledRangeIndex"]
 - !private ["P10PerfectLib15JSONConvertible", "_Element"]
 - !private ["P10PerfectLib15JSONConvertible", "_getBuiltinLogicValue"]
@@ -238,6 +240,7 @@ depends-member:
 - !private ["P10PerfectLib15JSONConvertible", "subject"]
 - !private ["P10PerfectLib15JSONConvertible", "subscript"]
 - !private ["P10PerfectLib15JSONConvertible", "timeToSend"]
+- !private ["C10PerfectLib21JSONConvertibleObject", "ToM"]
 - !private ["C10PerfectLib21JSONConvertibleObject", "content"]
 - !private ["C10PerfectLib21JSONConvertibleObject", "jsonEncodedString"]
 - !private ["C10PerfectLib21JSONConvertibleObject", "messageStatus"]
@@ -247,6 +250,7 @@ depends-member:
 - !private ["C10PerfectLib21JSONConvertibleObject", "timeToSend"]
 - !private ["Ps25LosslessStringConvertible", "_getBuiltinLogicValue"]
 - ["Ps25LosslessStringConvertible", "init"]
+- !private ["C16TextLaterRestAPI7Message", "ToM"]
 - !private ["C16TextLaterRestAPI7Message", "content"]
 - ["C16TextLaterRestAPI7Message", "deinit"]
 - !private ["C16TextLaterRestAPI7Message", "init"]
@@ -609,7 +613,7 @@ depends-external:
 - "/usr/include/mysql/mysql_com.h"
 - "/usr/include/mysql/mysql_version.h"
 - "/usr/include/mysql/mysql.h"
+- "/home/freedom/Desktop/TextLaterRestAPI/Packages/PerfectHTTPServer-2.0.9/Sources/CHTTPParser/include/module.modulemap"
 - "/home/freedom/Desktop/TextLaterRestAPI/.build/debug/PerfectHTTPServer.swiftmodule"
 - "/home/freedom/Desktop/TextLaterRestAPI/Packages/PerfectHTTPServer-2.0.9/Sources/CHTTPParser/include/http_parser.h"
-- "/home/freedom/Desktop/TextLaterRestAPI/Packages/PerfectHTTPServer-2.0.9/Sources/CHTTPParser/include/module.modulemap"
 interface-hash: "92df0adfd2a1fe8c77b4c1f09feb46dc"

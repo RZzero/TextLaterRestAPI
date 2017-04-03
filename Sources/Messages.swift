@@ -3,10 +3,10 @@ import MySQL
 
 public class Messages {
   //Database credentials
-    let testHost = "127.0.0.1"
-    let testUser = "root"
-    let testPassword = "textlater*123"
-    let testDB = "TextLater"
+    let testHost = ""
+    let testUser = ""
+    let testPassword = ""
+    let testDB = ""
     var mysql: MySQL!
 
 	var data = [Message]()
@@ -40,8 +40,9 @@ public class Messages {
 	public func addMessage(_ request: HTTPRequest) -> String {
 		let new = Message(
       idMessage: "",
-      sender: request.param(name: "sender")!,
       platform: request.param(name: "platform")!,
+      sender: request.param(name: "sender")!,
+      ToM: request.param(name: "ToM")!,
       subject: request.param(name: "subject")!,
       content: request.param(name: "content")!,
       timeToSend: request.param(name: "timeToSend")!,
@@ -49,7 +50,7 @@ public class Messages {
 		)
 		do{
 					_ = mysql.connect()
-		let query = "INSERT INTO Message (sender, platform, subject, content, timeToSend, messageStatus) VALUES ('\(new.sender)', '\(new.platform)', '\(new.subject)', '\(new.content)', '\(new.timeToSend)', '\(new.messageStatus)')"
+		let query = "INSERT INTO Message (platform, sender, ToM,subject, content, timeToSend, messageStatus) VALUES ('\(new.platform)', '\(new.sender)','\(new.ToM)', '\(new.subject)', '\(new.content)', '\(new.timeToSend)', '\(new.messageStatus)')"
 
 		 _ = mysql.query(statement: query)
 		print(query)
@@ -70,7 +71,7 @@ public class Messages {
 
     let mySender = request.param(name: "sender")!
 
-    let query: String = "SELECT idMessage, sender, platform, subject, content, timeToSend, messageStatus FROM Message WHERE sender= '\(mySender)' ORDER BY idMessage"
+    let query: String = "SELECT idMessage, platform, sender, ToM, subject, content, timeToSend, messageStatus FROM Message WHERE sender= '\(mySender)' ORDER BY idMessage"
 
     _ = mysql.query(statement: query)
     print(query)
@@ -79,14 +80,15 @@ public class Messages {
     results?.forEachRow(callback: { (row) in
 
         let idMessage = row[0] ?? ""
-        let sender = row[1] ?? ""
-        let platform = row[2] ?? ""
-        let subject = row[3] ?? ""
-        let content = row[4] ?? ""
-        let timeToSend = row[5] ?? ""
-        let messageStatus = row[6] ?? ""
+        let platform = row[1] ?? ""
+        let sender = row[2] ?? ""
+        let ToM = row[3] ?? ""
+        let subject = row[4] ?? ""
+        let content = row[5] ?? ""
+        let timeToSend = row[6] ?? ""
+        let messageStatus = row[7] ?? ""
 
-        let message = Message(idMessage: idMessage, sender: sender, platform: platform,
+        let message = Message(idMessage: idMessage, platform: platform, sender: sender, ToM: ToM,
         subject: subject, content: content,timeToSend: timeToSend, messageStatus:messageStatus)
         data.append(message)
     })
