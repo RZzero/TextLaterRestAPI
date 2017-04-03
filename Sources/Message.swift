@@ -1,8 +1,8 @@
 import PerfectLib
 
-class User : JSONConvertibleObject {
+class Message : JSONConvertibleObject {
 
-	static let registerName = "message"
+	static let registerName = "Message"
 
 	var idMessage: String = ""
 	var sender: String = ""
@@ -36,12 +36,12 @@ class User : JSONConvertibleObject {
 	}
 	override public func getJSONValues() -> [String : Any] {
 		return [
-			"idMessage":idMessage
-			"sender":sender
-			"platform":platform
-			"subject":subject
-			"content":content
-			"timeToSend":timeToSend
+			"idMessage":idMessage,
+			"sender":sender,
+			"platform":platform,
+			"subject":subject,
+			"content":content,
+			"timeToSend":timeToSend,
 			"messageStatus":messageStatus
 		]
 	}

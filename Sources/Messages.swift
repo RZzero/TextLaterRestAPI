@@ -3,18 +3,18 @@ import MySQL
 
 public class Messages {
   //Database credentials
-    let testHost = "localhost"
-    let testUser = ""
-    let testPassword = ""
+    let testHost = "127.0.0.1"
+    let testUser = "root"
+    let testPassword = "textlater*123"
     let testDB = "TextLater"
     var mysql: MySQL!
 
 	var data = [Message]()
 
-  public func fetchRafa(){
-    let rafael = User(firstName: "Leafar",secondName: "Zero", lastName: "Coolio")
-    data.append(rafael)
-  }
+  // public func fetchRafa(){
+  //   let rafael = User(firstName: "Leafar",secondName: "Zero", lastName: "Coolio")
+  //   data.append(rafael)
+  // }
 
 
 	init(){
@@ -39,7 +39,7 @@ public class Messages {
 	// Accepts the HTTPRequest object and adds a new User from post params.
 	public func addMessage(_ request: HTTPRequest) -> String {
 		let new = Message(
-      idMessage: request.param(name: "idMessage")!,
+      idMessage: "",
       sender: request.param(name: "sender")!,
       platform: request.param(name: "platform")!,
       subject: request.param(name: "subject")!,
@@ -49,8 +49,7 @@ public class Messages {
 		)
 		do{
 					_ = mysql.connect()
-		let query = "INSERT INTO Message (sender,platform,subject,content,timetosend,messagestatus)
-     VALUES('\(new.sender)','\(new.platform)','\(new.subject)','\(new.content)','\(new.timeToSend)','\(new.messageStatus)')"
+		let query = "INSERT INTO Message (sender, platform, subject, content, timeToSend, messageStatus) VALUES ('\(new.sender)', '\(new.platform)', '\(new.subject)', '\(new.content)', '\(new.timeToSend)', '\(new.messageStatus)')"
 
 		 _ = mysql.query(statement: query)
 		print(query)
@@ -62,16 +61,17 @@ public class Messages {
 
         _ = mysql.connect()
 		data.append(new)
+
     return toString()
 	}
 
-  func fetchMyMessages(_ request: HTTPRequest) {
+  public func fetchMyMessages(_ request: HTTPRequest) {
     _ = mysql.connect()
 
     let mySender = request.param(name: "sender")!
 
-    let query = "SELECT idMessage, sender, platform, subject, content, timeToSend,
-     messageStatus FROM Message WHERE sender = '\(mySender)' ORDER BY idMessage"
+    let query: String = "SELECT idMessage, sender, platform, subject, content, timeToSend, messageStatus FROM Message WHERE sender= '\(mySender)' ORDER BY idMessage"
+
     _ = mysql.query(statement: query)
     print(query)
     let results = mysql.storeResults()

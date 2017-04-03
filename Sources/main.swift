@@ -28,13 +28,13 @@ routes.add(method: .get, uri: "/", handler: {
 */
 
 // GET USER METHOD
-routes.add(method: .get, uri: "/api/v1/message", handler: {
+routes.add(method: .post, uri: "/api/v1/message/mymessages", handler: {
 	request, response in
 
 	let message = Messages()
 
 	// Setting the response content type explicitly to application/json
-  message.fetchMyMessages()
+  message.fetchMyMessages(request)
 	response.setHeader(.contentType, value: "application/json")
 	// Setting the body response to the JSON list generated
 
@@ -45,11 +45,11 @@ routes.add(method: .get, uri: "/api/v1/message", handler: {
 )
 
 // POST User METHOD
-routes.add(method: .post, uri: "/api/v1/message", handler: {
+routes.add(method: .post, uri: "/api/v1/message/", handler: {
 	request, response in
 
 	//let people = People()
-	let message = Message()
+	let message = Messages()
 
 	// Setting the response content type explicitly to application/json
 	response.setHeader(.contentType, value: "application/json")

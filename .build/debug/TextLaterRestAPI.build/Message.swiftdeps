@@ -1,148 +1,164 @@
 ### Swift dependencies file v0 ###
 provides-top-level:
-- "server"
-- "routes"
+- "Message"
 provides-nominal:
+- "C16TextLaterRestAPI7Message"
 provides-member:
+- ["C16TextLaterRestAPI7Message", ""]
 depends-top-level:
+- "String"
 - "AssignmentPrecedence"
-- "Messages"
-- "PerfectError"
-- "Routes"
 - "StringLiteralType"
-- "server"
-- "print"
-- "routes"
-- "HTTPServer"
-- "UnicodeScalarType"
-- "IntegerLiteralType"
-- "FloatLiteralType"
+- "JSONConvertibleObject"
+- "Message"
+- !private "Dictionary"
+- !private "IntegerLiteralType"
+- !private "FloatLiteralType"
 depends-member:
-- ["Ps9AnyObject", "addMessage"]
-- ["Ps9AnyObject", "addRoutes"]
-- ["Ps9AnyObject", "fetchMyMessages"]
+- ["Ps9AnyObject", "content"]
+- !private ["Ps9AnyObject", "getJSONValue"]
+- ["Ps9AnyObject", "getJSONValues"]
+- ["Ps9AnyObject", "idMessage"]
 - ["Ps9AnyObject", "init"]
-- ["Ps9AnyObject", "list"]
-- ["Ps9AnyObject", "serverPort"]
-- ["Ps9AnyObject", "start"]
-- ["Sb", "deinit"]
-- ["Vs9Character", "deinit"]
+- ["Ps9AnyObject", "messageStatus"]
+- ["Ps9AnyObject", "platform"]
+- ["Ps9AnyObject", "registerName"]
+- ["Ps9AnyObject", "sender"]
+- ["Ps9AnyObject", "setJSONValues"]
+- ["Ps9AnyObject", "subject"]
+- ["Ps9AnyObject", "timeToSend"]
+- ["Ps9AnyObject", ""]
+- !private ["Ps10Collection", "Key"]
+- !private ["Ps10Collection", "Value"]
 - ["Ps10Comparable", "init"]
+- !private ["Ps28CustomDebugStringConvertible", "Key"]
+- !private ["Ps28CustomDebugStringConvertible", "Value"]
 - ["Ps28CustomDebugStringConvertible", "init"]
 - ["Ps29CustomPlaygroundQuickLookable", "init"]
+- !private ["Ps17CustomReflectable", "Key"]
+- !private ["Ps17CustomReflectable", "Value"]
 - ["Ps17CustomReflectable", "init"]
-- ["Ps23CustomStringConvertible", "get"]
+- !private ["Ps23CustomStringConvertible", "Key"]
+- !private ["Ps23CustomStringConvertible", "Value"]
 - ["Ps23CustomStringConvertible", "init"]
-- ["Ps23CustomStringConvertible", "post"]
-- ["Sd", "deinit"]
-- ["Ps9Equatable", "get"]
+- !private ["Vs10Dictionary", "Key"]
+- !private ["Vs10Dictionary", "Value"]
+- ["Vs10Dictionary", "deinit"]
 - ["Ps9Equatable", "init"]
-- ["Ps9Equatable", "post"]
-- ["Ps5Error", "networkError"]
+- !private ["Ps30ExpressibleByDictionaryLiteral", "Key"]
+- !private ["Ps30ExpressibleByDictionaryLiteral", "Value"]
 - ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
 - ["Ps32ExpressibleByStringInterpolation", "init"]
 - ["Ps26ExpressibleByStringLiteral", "init"]
 - ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
-- ["Sf", "deinit"]
-- ["O11PerfectHTTP10HTTPMethod", "deinit"]
-- ["O11PerfectHTTP10HTTPMethod", "get"]
-- ["O11PerfectHTTP10HTTPMethod", "post"]
-- ["P11PerfectHTTP11HTTPRequest", "deinit"]
-- ["P11PerfectHTTP12HTTPResponse", "appendBody"]
-- ["P11PerfectHTTP12HTTPResponse", "completed"]
-- ["P11PerfectHTTP12HTTPResponse", "deinit"]
-- ["P11PerfectHTTP12HTTPResponse", "setHeader"]
-- ["C17PerfectHTTPServer10HTTPServer", "addRoutes"]
-- ["C17PerfectHTTPServer10HTTPServer", "deinit"]
-- ["C17PerfectHTTPServer10HTTPServer", "init"]
-- ["C17PerfectHTTPServer10HTTPServer", "serverPort"]
-- ["C17PerfectHTTPServer10HTTPServer", "start"]
-- ["Ps8Hashable", "get"]
 - ["Ps8Hashable", "init"]
-- ["Ps8Hashable", "post"]
-- ["Si", "deinit"]
-- ["Vs5Int16", "deinit"]
-- ["Vs5Int32", "deinit"]
-- ["Vs5Int64", "deinit"]
-- ["Vs4Int8", "deinit"]
+- !private ["Ps9Indexable", "Key"]
+- !private ["Ps9Indexable", "Value"]
+- !private ["Ps13IndexableBase", "Key"]
+- !private ["Ps13IndexableBase", "Value"]
+- !private ["P10PerfectLib15JSONConvertible", "Key"]
+- !private ["P10PerfectLib15JSONConvertible", "Value"]
+- ["P10PerfectLib15JSONConvertible", "content"]
+- !private ["P10PerfectLib15JSONConvertible", "getJSONValue"]
+- ["P10PerfectLib15JSONConvertible", "getJSONValues"]
+- ["P10PerfectLib15JSONConvertible", "idMessage"]
 - ["P10PerfectLib15JSONConvertible", "init"]
+- ["P10PerfectLib15JSONConvertible", "messageStatus"]
+- ["P10PerfectLib15JSONConvertible", "platform"]
+- ["P10PerfectLib15JSONConvertible", "registerName"]
+- ["P10PerfectLib15JSONConvertible", "sender"]
+- ["P10PerfectLib15JSONConvertible", "setJSONValues"]
+- ["P10PerfectLib15JSONConvertible", "subject"]
+- ["P10PerfectLib15JSONConvertible", "timeToSend"]
+- ["P10PerfectLib15JSONConvertible", ""]
+- ["C10PerfectLib21JSONConvertibleObject", "String"]
+- ["C10PerfectLib21JSONConvertibleObject", "content"]
+- ["C10PerfectLib21JSONConvertibleObject", "deinit"]
+- !private ["C10PerfectLib21JSONConvertibleObject", "getJSONValue"]
+- ["C10PerfectLib21JSONConvertibleObject", "getJSONValues"]
+- ["C10PerfectLib21JSONConvertibleObject", "idMessage"]
+- ["C10PerfectLib21JSONConvertibleObject", "init"]
+- ["C10PerfectLib21JSONConvertibleObject", "messageStatus"]
+- ["C10PerfectLib21JSONConvertibleObject", "platform"]
+- ["C10PerfectLib21JSONConvertibleObject", "registerName"]
+- ["C10PerfectLib21JSONConvertibleObject", "sender"]
+- ["C10PerfectLib21JSONConvertibleObject", "setJSONValues"]
+- ["C10PerfectLib21JSONConvertibleObject", "subject"]
+- ["C10PerfectLib21JSONConvertibleObject", "timeToSend"]
+- ["C10PerfectLib21JSONConvertibleObject", ""]
 - ["Ps25LosslessStringConvertible", "init"]
-- ["C16TextLaterRestAPI8Messages", "addMessage"]
-- ["C16TextLaterRestAPI8Messages", "deinit"]
-- ["C16TextLaterRestAPI8Messages", "fetchMyMessages"]
-- ["C16TextLaterRestAPI8Messages", "init"]
-- ["C16TextLaterRestAPI8Messages", "list"]
+- ["C16TextLaterRestAPI7Message", "String"]
+- ["C16TextLaterRestAPI7Message", "content"]
+- ["C16TextLaterRestAPI7Message", "deinit"]
+- !private ["C16TextLaterRestAPI7Message", "getJSONValue"]
+- ["C16TextLaterRestAPI7Message", "getJSONValues"]
+- ["C16TextLaterRestAPI7Message", "idMessage"]
+- ["C16TextLaterRestAPI7Message", "init"]
+- ["C16TextLaterRestAPI7Message", "messageStatus"]
+- ["C16TextLaterRestAPI7Message", "platform"]
+- ["C16TextLaterRestAPI7Message", "registerName"]
+- ["C16TextLaterRestAPI7Message", "sender"]
+- ["C16TextLaterRestAPI7Message", "setJSONValues"]
+- ["C16TextLaterRestAPI7Message", "subject"]
+- ["C16TextLaterRestAPI7Message", "timeToSend"]
 - ["Ps10MirrorPath", "init"]
-- ["OO11PerfectHTTP18HTTPResponseHeader4Name", "contentType"]
-- ["OO11PerfectHTTP18HTTPResponseHeader4Name", "deinit"]
-- ["O10PerfectLib12PerfectError", "networkError"]
-- ["V11PerfectHTTP6Routes", "add"]
-- ["V11PerfectHTTP6Routes", "deinit"]
-- ["V11PerfectHTTP6Routes", "init"]
+- ["Os5Never", "deinit"]
+- !private ["Ps8Sequence", "Key"]
+- !private ["Ps8Sequence", "Value"]
+- ["Vs12StaticString", "deinit"]
+- !private ["Vs12StaticString", "init"]
 - ["SS", "deinit"]
 - ["SS", "init"]
 - ["Ps16TextOutputStream", "init"]
 - ["Ps20TextOutputStreamable", "init"]
 - ["Su", "deinit"]
-- ["Vs6UInt16", "deinit"]
-- ["Vs6UInt32", "deinit"]
-- ["Vs6UInt64", "deinit"]
-- ["Vs5UInt8", "deinit"]
-- ["Sc", "deinit"]
+- !private ["P10Foundation12_CFBridgable", "Key"]
+- !private ["P10Foundation12_CFBridgable", "Value"]
 - ["P10Foundation12_CFBridgable", "init"]
 - ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
 - ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
 - ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
 - ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
-- ["Ps9_Hashable", "get"]
 - ["Ps9_Hashable", "init"]
-- ["Ps9_Hashable", "post"]
+- !private ["P10Foundation12_NSBridgable", "Key"]
+- !private ["P10Foundation12_NSBridgable", "Value"]
 - ["P10Foundation12_NSBridgable", "init"]
+- !private ["P10Foundation17_ObjectBridgeable", "Key"]
+- !private ["P10Foundation17_ObjectBridgeable", "Value"]
 - ["P10Foundation17_ObjectBridgeable", "init"]
+- !private ["P10Foundation21_ObjectTypeBridgeable", "Key"]
+- !private ["P10Foundation21_ObjectTypeBridgeable", "Value"]
 - ["P10Foundation21_ObjectTypeBridgeable", "init"]
 depends-nominal:
 - "Ps9AnyObject"
-- "Sb"
-- "Vs9Character"
+- !private "Ps10Collection"
 - "Ps10Comparable"
 - "Ps28CustomDebugStringConvertible"
 - "Ps29CustomPlaygroundQuickLookable"
 - "Ps17CustomReflectable"
 - "Ps23CustomStringConvertible"
-- "Sd"
+- "Vs10Dictionary"
 - "Ps9Equatable"
-- "Ps5Error"
+- !private "Ps30ExpressibleByDictionaryLiteral"
 - "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
 - "Ps32ExpressibleByStringInterpolation"
 - "Ps26ExpressibleByStringLiteral"
 - "Ps33ExpressibleByUnicodeScalarLiteral"
-- "Sf"
-- "O11PerfectHTTP10HTTPMethod"
-- "P11PerfectHTTP11HTTPRequest"
-- "P11PerfectHTTP12HTTPResponse"
-- "C17PerfectHTTPServer10HTTPServer"
 - "Ps8Hashable"
-- "Si"
-- "Vs5Int16"
-- "Vs5Int32"
-- "Vs5Int64"
-- "Vs4Int8"
+- !private "Ps9Indexable"
+- !private "Ps13IndexableBase"
 - "P10PerfectLib15JSONConvertible"
+- "C10PerfectLib21JSONConvertibleObject"
 - "Ps25LosslessStringConvertible"
-- "C16TextLaterRestAPI8Messages"
+- "C16TextLaterRestAPI7Message"
 - "Ps10MirrorPath"
-- "OO11PerfectHTTP18HTTPResponseHeader4Name"
-- "O10PerfectLib12PerfectError"
-- "V11PerfectHTTP6Routes"
+- "Os5Never"
+- !private "Ps8Sequence"
+- "Vs12StaticString"
 - "SS"
 - "Ps16TextOutputStream"
 - "Ps20TextOutputStreamable"
 - "Su"
-- "Vs6UInt16"
-- "Vs6UInt32"
-- "Vs6UInt64"
-- "Vs5UInt8"
-- "Sc"
 - "P10Foundation12_CFBridgable"
 - "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
 - "Ps34_ExpressibleByBuiltinStringLiteral"
@@ -201,4 +217,4 @@ depends-external:
 - "/home/freedom/Desktop/TextLaterRestAPI/.build/debug/PerfectHTTPServer.swiftmodule"
 - "/home/freedom/Desktop/TextLaterRestAPI/Packages/PerfectHTTPServer-2.0.9/Sources/CHTTPParser/include/http_parser.h"
 - "/home/freedom/Desktop/TextLaterRestAPI/Packages/PerfectHTTPServer-2.0.9/Sources/CHTTPParser/include/module.modulemap"
-interface-hash: "4fc105f58db03a51a3a1ad0413f49a76"
+interface-hash: "ae1209c3aea1ec0192d25fb5c99a0577"
