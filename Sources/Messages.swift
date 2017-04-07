@@ -3,10 +3,10 @@ import MySQL
 
 public class Messages {
   //Database credentials
-    let testHost = "127.0.0.1"
-    let testUser = "root"
-    let testPassword = "textlater*123"
-    let testDB = "TextLater"
+    let testHost = ""
+    let testUser = ""
+    let testPassword = ""
+    let testDB = ""
     var mysql: MySQL!
 
 	var data = [Message]()
