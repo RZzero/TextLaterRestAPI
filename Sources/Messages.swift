@@ -11,12 +11,6 @@ public class Messages {
 
 	var data = [Message]()
 
-  // public func fetchRafa(){
-  //   let rafael = User(firstName: "Leafar",secondName: "Zero", lastName: "Coolio")
-  //   data.append(rafael)
-  // }
-
-
 	init(){
 
       mysql = MySQL() // Create an instance of MySQL to work with
@@ -67,11 +61,14 @@ public class Messages {
 	}
 
   public func fetchMyMessages(_ request: HTTPRequest) {
+    print (request)
+    let mySender = request.param(name: "sender")!
+    print (mySender)
     _ = mysql.connect()
 
-    let mySender = request.param(name: "sender")!
 
-    let query: String = "SELECT idMessage, platform, sender, ToM, subject, content, timeToSend, messageStatus FROM Message WHERE sender= '\(mySender)' ORDER BY idMessage"
+
+    let query: String = "SELECT idMessage, platform, sender, ToM, subject, content, timeToSend, messageStatus FROM Message WHERE sender= '\(mySender)' AND messageStatus = '\("NS")'ORDER BY timeToSend"
 
     _ = mysql.query(statement: query)
     print(query)

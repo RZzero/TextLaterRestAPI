@@ -28,13 +28,15 @@ routes.add(method: .get, uri: "/", handler: {
 */
 
 // POST FOR GETTING USER MESSAGES
-routes.add(method: .post, uri: "/api/v1/message/mymessages", handler: {
+routes.add(method: .get, uri: "/api/v1/message/mymessages", handler:{
 	request, response in
-
+	print ("here0")
 	let message = Messages()
-
+print ("here1")
 	// Setting the response content type explicitly to application/json
+	//Preparing the user messages
   message.fetchMyMessages(request)
+print ("here2")
 	response.setHeader(.contentType, value: "application/json")
 	// Setting the body response to the JSON list generated
 
