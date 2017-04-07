@@ -60,6 +60,36 @@ public class Messages {
     return toString()
 	}
 
+  public func modifyMessage(_ request: HTTPRequest) -> String {
+    let new = Message(
+      idMessage: request.param(name: "idMessage")!,
+      platform: request.param(name: "platform")!,
+      sender: request.param(name: "sender")!,
+      ToM: request.param(name: "ToM")!,
+      subject: request.param(name: "subject")!,
+      content: request.param(name: "content")!,
+      timeToSend: request.param(name: "timeToSend")!,
+      messageStatus: request.param(name: "messageStatus")!
+    )
+    do{
+          _ = mysql.connect()
+    let query = "UPDATE Message SET platform = '\(new.platform)',ToM = '\(new.ToM)' , subject = '\(new.subject)' , content = '\(new.content)', timeToSend = '\(new.timeToSend)' WHERE idMessage = '\(new.idMessage)'"
+
+     _ = mysql.query(statement: query)
+    print(query)
+
+    }
+    defer {
+          mysql.close() //This defer block makes sure we terminate the connection once finished, regardless of the result
+        }
+
+        _ = mysql.connect()
+    data.append(new)
+
+    return toString()
+  }
+
+
   public func fetchMyMessages(_ request: HTTPRequest) {
     print (request)
     let mySender = request.param(name: "sender")!

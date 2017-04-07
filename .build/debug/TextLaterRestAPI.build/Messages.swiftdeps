@@ -7,16 +7,16 @@ provides-member:
 - ["C16TextLaterRestAPI8Messages", ""]
 depends-top-level:
 - "Message"
-- !private "??"
-- "HTTPRequest"
+- "String"
 - !private "UnicodeScalarType"
-- "IntegerLiteralType"
+- "HTTPRequest"
 - "FloatLiteralType"
 - "Messages"
-- !private "print"
+- !private "??"
 - "AssignmentPrecedence"
-- "String"
+- "IntegerLiteralType"
 - "MySQL"
+- !private "print"
 - "StringLiteralType"
 depends-member:
 - ["Ps9AnyObject", "Message"]
@@ -29,6 +29,7 @@ depends-member:
 - !private ["Ps9AnyObject", "data"]
 - !private ["Ps9AnyObject", "errorMessage"]
 - !private ["Ps9AnyObject", "forEachRow"]
+- !private ["Ps9AnyObject", "idMessage"]
 - !private ["Ps9AnyObject", "init"]
 - !private ["Ps9AnyObject", "jsonEncodedString"]
 - !private ["Ps9AnyObject", "messageStatus"]
@@ -231,6 +232,7 @@ depends-member:
 - !private ["P10PerfectLib15JSONConvertible", "_getBuiltinLogicValue"]
 - !private ["P10PerfectLib15JSONConvertible", "append"]
 - !private ["P10PerfectLib15JSONConvertible", "content"]
+- !private ["P10PerfectLib15JSONConvertible", "idMessage"]
 - ["P10PerfectLib15JSONConvertible", "init"]
 - !private ["P10PerfectLib15JSONConvertible", "joined"]
 - !private ["P10PerfectLib15JSONConvertible", "jsonEncodedString"]
@@ -242,6 +244,7 @@ depends-member:
 - !private ["P10PerfectLib15JSONConvertible", "timeToSend"]
 - !private ["C10PerfectLib21JSONConvertibleObject", "ToM"]
 - !private ["C10PerfectLib21JSONConvertibleObject", "content"]
+- !private ["C10PerfectLib21JSONConvertibleObject", "idMessage"]
 - !private ["C10PerfectLib21JSONConvertibleObject", "jsonEncodedString"]
 - !private ["C10PerfectLib21JSONConvertibleObject", "messageStatus"]
 - !private ["C10PerfectLib21JSONConvertibleObject", "platform"]
@@ -253,6 +256,7 @@ depends-member:
 - !private ["C16TextLaterRestAPI7Message", "ToM"]
 - !private ["C16TextLaterRestAPI7Message", "content"]
 - ["C16TextLaterRestAPI7Message", "deinit"]
+- !private ["C16TextLaterRestAPI7Message", "idMessage"]
 - !private ["C16TextLaterRestAPI7Message", "init"]
 - !private ["C16TextLaterRestAPI7Message", "jsonEncodedString"]
 - !private ["C16TextLaterRestAPI7Message", "messageStatus"]
@@ -270,6 +274,7 @@ depends-member:
 - ["C16TextLaterRestAPI8Messages", "fetchMyMessages"]
 - ["C16TextLaterRestAPI8Messages", "init"]
 - ["C16TextLaterRestAPI8Messages", "list"]
+- ["C16TextLaterRestAPI8Messages", "modifyMessage"]
 - ["C16TextLaterRestAPI8Messages", "mysql"]
 - !private ["C16TextLaterRestAPI8Messages", "print"]
 - ["C16TextLaterRestAPI8Messages", "testDB"]
@@ -616,4 +621,4 @@ depends-external:
 - "/home/freedom/Desktop/TextLaterRestAPI/Packages/PerfectHTTPServer-2.0.9/Sources/CHTTPParser/include/module.modulemap"
 - "/home/freedom/Desktop/TextLaterRestAPI/.build/debug/PerfectHTTPServer.swiftmodule"
 - "/home/freedom/Desktop/TextLaterRestAPI/Packages/PerfectHTTPServer-2.0.9/Sources/CHTTPParser/include/http_parser.h"
-interface-hash: "92df0adfd2a1fe8c77b4c1f09feb46dc"
+interface-hash: "022052ad8a6dce570e4ac341bd48486c"
