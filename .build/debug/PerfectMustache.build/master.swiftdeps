@@ -1,5 +1,0 @@
-version: "Swift version 3.0.2 (swift-3.0.2-RELEASE)"
-options: "8bc8b47b74e50e07af9eca94a4cc4a18"
-build_time: [545496298, 749691000]
-inputs:
-  "/home/freedom/Desktop/TextLaterRestAPI/Packages/PerfectMustache-2.0.4/Sources/Mustache.swift": [545496297, 0]

@@ -1,5 +1,0 @@
-version: "Swift version 3.0.2 (swift-3.0.2-RELEASE)"
-options: "0fe6ddf3b8198d7d73d9e8b8ec3ea771"
-build_time: [545503809, 332242000]
-inputs:
-  "/home/freedom/Desktop/TextLaterRestAPI/Packages/MySQL-2.1.2/Sources/MySQL/MySQL.swift": [545503803, 0]

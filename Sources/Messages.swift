@@ -44,17 +44,23 @@ public class Messages {
 		)
 		do{
 					_ = mysql.connect()
-		let query = "INSERT INTO Message (platform, sender, ToM,subject, content, timeToSend, messageStatus) VALUES ('\(new.platform)', '\(new.sender)','\(new.ToM)', '\(new.subject)', '\(new.content)', '\(new.timeToSend)', '\(new.messageStatus)')"
+		var query = "INSERT INTO Message (platform, sender, ToM,subject, content, timeToSend, messageStatus) VALUES ('\(new.platform)', '\(new.sender)','\(new.ToM)', '\(new.subject)', '\(new.content)', '\(new.timeToSend)', '\(new.messageStatus)')"
 
 		 _ = mysql.query(statement: query)
-		print(query)
+
+     query = "SELECT idMessage FROM Message ORDER BY idMessage DESC LIMIT 1"
+     print (query)
+     _ = mysql.query(statement: query)
 
 		}
+    var results = mysql.storeResults()
+results?.forEachRow(callback: {(row) in
+    new.idMessage = row[0] ?? ""})
 		defer {
           mysql.close() //This defer block makes sure we terminate the connection once finished, regardless of the result
         }
 
-        _ = mysql.connect()
+        // _ = mysql.connect()
 		data.append(new)
 
     return toString()
@@ -62,20 +68,19 @@ public class Messages {
 
 //THIS FUNCTION ASSUMES THAT THE ATTACHED FILES BELONGS TO THE LAST MESSAGE INSERTED
   public func saveFiles(_ request: HTTPRequest)-> String{
-    var id_message = ""
     do{
       _ = mysql.connect()
-      var query = "SELECT idMessage FROM Message ORDER BY idMessage ASC LIMIT 1"
-      _ = mysql.query(statement: query)
+      // var query = "SELECT idMessage FROM Message ORDER BY idMessage DESC LIMIT 1"
+      // _ = mysql.query(statement: query)
+   }
 
-    }
-    var results = mysql.storeResults()
-results?.forEachRow(callback: {(row) in
-    id_message = row[0] ?? ""})
-    defer {
-          mysql.close() //This defer block makes sure we terminate the connection once finished, regardless of the result
-        }
+//    var id_message = ""
+//    var results = mysql.storeResults()
+// results?.forEachRow(callback: {(row) in
+//    id_message = row[0] ?? ""})
 
+
+    let state = "Ok"
     if let uploads = request.postFileUploads, uploads.count > 0 {
     // Create an array of dictionaries which will show what was uploaded
     var ary = [[String:Any]]()
@@ -93,6 +98,11 @@ results?.forEachRow(callback: {(row) in
             "fileSize": upload.fileSize,
             "tmpFileName": upload.tmpFileName
             ])
+            var index = upload.fileName.components(separatedBy: "--")
+            var id_message = index.first!
+
+            var query = "INSERT INTO Attached (idMessage, fileName) VALUES ('\(id_message)','\(upload.fileName)')"
+            _ = mysql.query(statement: query)
             let thisFile = File(upload.tmpFileName)
             do {
                 let _ = try thisFile.moveTo(path: fileDir.path + upload.fileName, overWrite: true)
@@ -102,8 +112,11 @@ results?.forEachRow(callback: {(row) in
     }
 
     }
+    defer {
+           mysql.close() //This defer block makes sure we terminate the connection once finished, regardless of the result
+         }
 
-    return id_message
+    return state
   }
   public func modifyMessage(_ request: HTTPRequest) -> String {
     let new = Message(
@@ -169,6 +182,7 @@ results?.forEachRow(callback: {(row) in
     }
 }
 	// Convenient encoding method that returns a string from JSON objects.
+
 	private func toString() -> String {
 		var out = [String]()
 

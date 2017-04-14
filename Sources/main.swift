@@ -1,7 +1,6 @@
 import PerfectLib
 import PerfectHTTP
 import PerfectHTTPServer
-import PerfectMustache
 // Create HTTP server.
 let server = HTTPServer()
 
