@@ -1,7 +1,7 @@
 import PerfectLib
 import PerfectHTTP
 import PerfectHTTPServer
-
+import PerfectMustache
 // Create HTTP server.
 let server = HTTPServer()
 
@@ -70,6 +70,16 @@ routes.add(method: .post, uri: "/api/v1/message/modifymessage/", handler: {
 	response.appendBody(string: message.modifyMessage(request))
 	// Signalling that the request is completed
 	response.completed()
+	}
+)
+
+routes.add(method: .post, uri: "/api/v1/upload/", handler: {
+	request, response in
+		//let webRoot = request.documentRoot
+		let message = Messages()
+		response.appendBody(string: message.saveFiles(request))
+		response.completed()
+		// mustacheRequest(request: request, response: response, handler: UploadHandler(), templatePath: webRoot + "/response.mustache")
 	}
 )
 

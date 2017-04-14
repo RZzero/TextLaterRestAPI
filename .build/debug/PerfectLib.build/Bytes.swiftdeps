@@ -6,23 +6,23 @@ provides-nominal:
 provides-member:
 - ["C10PerfectLib5Bytes", ""]
 depends-top-level:
-- "UInt16"
-- !private "+="
-- !private "<"
-- !private "<<"
-- "FloatLiteralType"
-- !private ">>"
-- "UInt32"
-- "IntegerLiteralType"
-- "Int"
-- !private "&"
 - !private "+"
-- "UInt64"
+- !private ">>"
 - !private "-"
-- "AssignmentPrecedence"
 - "ArraySlice"
-- "UInt8"
+- "IntegerLiteralType"
 - "Bytes"
+- "FloatLiteralType"
+- "UInt8"
+- "UInt32"
+- !private "+="
+- "UInt16"
+- "AssignmentPrecedence"
+- !private "<<"
+- !private "<"
+- !private "&"
+- "UInt64"
+- "Int"
 depends-member:
 - !private ["Ps9AnyObject", "UInt16"]
 - !private ["Ps9AnyObject", "UInt32"]

@@ -15,15 +15,15 @@ provides-member:
 - ["O11PerfectHTTP18HTTPResponseHeader", ""]
 - ["OO11PerfectHTTP18HTTPResponseHeader4Name", ""]
 depends-top-level:
+- "Int"
 - "String"
-- "Bool"
-- "StringLiteralType"
+- "HTTPResponseHeader"
 - !private "~="
 - "=="
-- "HTTPResponseHeader"
-- "Int"
+- "Bool"
 - "Hashable"
 - "HTTPRequestHeader"
+- "StringLiteralType"
 - "Dictionary"
 depends-member:
 - !private ["Sb", "_getBuiltinLogicValue"]

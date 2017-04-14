@@ -20,16 +20,16 @@ provides-member:
 - ["P11PerfectHTTP17HTTPRequestFilter", ""]
 - ["P11PerfectHTTP18HTTPResponseFilter", ""]
 depends-top-level:
-- "HTTPResponseFilterResult"
 - "=="
-- "HTTPResponseFilter"
-- "HTTPRequest"
-- !private "FloatLiteralType"
-- !private "IntegerLiteralType"
-- "HTTPRequestFilter"
 - "HTTPRequestFilterResult"
 - "HTTPFilterPriority"
 - "HTTPResponse"
+- "HTTPRequestFilter"
+- "HTTPRequest"
+- !private "FloatLiteralType"
+- "HTTPResponseFilterResult"
+- "HTTPResponseFilter"
+- !private "IntegerLiteralType"
 depends-member:
 - !private ["Ps17BitwiseOperations", "hashValue"]
 - !private ["Ps7CVarArg", "hashValue"]

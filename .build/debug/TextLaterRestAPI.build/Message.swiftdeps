@@ -6,14 +6,14 @@ provides-nominal:
 provides-member:
 - ["C16TextLaterRestAPI7Message", ""]
 depends-top-level:
+- "AssignmentPrecedence"
 - "String"
-- !private "IntegerLiteralType"
+- !private "Dictionary"
 - !private "FloatLiteralType"
 - "Message"
-- !private "Dictionary"
-- "StringLiteralType"
-- "AssignmentPrecedence"
+- !private "IntegerLiteralType"
 - "JSONConvertibleObject"
+- "StringLiteralType"
 depends-member:
 - ["Ps9AnyObject", "ToM"]
 - ["Ps9AnyObject", "content"]
@@ -218,7 +218,8 @@ depends-external:
 - "/usr/include/mysql/mysql_com.h"
 - "/usr/include/mysql/mysql_version.h"
 - "/usr/include/mysql/mysql.h"
-- "/home/freedom/Desktop/TextLaterRestAPI/Packages/PerfectHTTPServer-2.0.9/Sources/CHTTPParser/include/module.modulemap"
 - "/home/freedom/Desktop/TextLaterRestAPI/.build/debug/PerfectHTTPServer.swiftmodule"
 - "/home/freedom/Desktop/TextLaterRestAPI/Packages/PerfectHTTPServer-2.0.9/Sources/CHTTPParser/include/http_parser.h"
+- "/home/freedom/Desktop/TextLaterRestAPI/Packages/PerfectHTTPServer-2.0.9/Sources/CHTTPParser/include/module.modulemap"
+- "/home/freedom/Desktop/TextLaterRestAPI/.build/debug/PerfectMustache.swiftmodule"
 interface-hash: "746ecc80a1f56fdd9cfcdc5a66390faa"

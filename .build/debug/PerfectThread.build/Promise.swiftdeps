@@ -16,14 +16,14 @@ provides-member:
 - ["C13PerfectThread7Promise", "set"]
 - ["C13PerfectThread7Promise", "fail"]
 depends-top-level:
-- "ThreadQueue"
-- "Error"
-- "AssignmentPrecedence"
-- "DestroyerOfQueues"
 - "Threading"
-- "Double"
+- "DestroyerOfQueues"
 - "Promise"
 - "BrokenPromise"
+- "AssignmentPrecedence"
+- "Double"
+- "ThreadQueue"
+- "Error"
 depends-member:
 - !private ["Ps9AnyObject", "BrokenPromise"]
 - !private ["Ps9AnyObject", "DestroyerOfQueues"]

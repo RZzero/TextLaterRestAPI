@@ -1,6 +1,6 @@
 import PerfectHTTP
 import MySQL
-
+import PerfectLib
 public class Messages {
   //Database credentials
     let testHost = ""
@@ -60,6 +60,51 @@ public class Messages {
     return toString()
 	}
 
+//THIS FUNCTION ASSUMES THAT THE ATTACHED FILES BELONGS TO THE LAST MESSAGE INSERTED
+  public func saveFiles(_ request: HTTPRequest)-> String{
+    var id_message = ""
+    do{
+      _ = mysql.connect()
+      var query = "SELECT idMessage FROM Message ORDER BY idMessage ASC LIMIT 1"
+      _ = mysql.query(statement: query)
+
+    }
+    var results = mysql.storeResults()
+results?.forEachRow(callback: {(row) in
+    id_message = row[0] ?? ""})
+    defer {
+          mysql.close() //This defer block makes sure we terminate the connection once finished, regardless of the result
+        }
+
+    if let uploads = request.postFileUploads, uploads.count > 0 {
+    // Create an array of dictionaries which will show what was uploaded
+    var ary = [[String:Any]]()
+    let fileDir = Dir("~/Desktop/RESTApi/files")
+      do {
+        try fileDir.create()
+      } catch {
+        print(error)
+      }
+    for upload in uploads {
+        ary.append([
+            "fieldName": upload.fieldName,
+            "contentType": upload.contentType,
+            "fileName": upload.fileName,
+            "fileSize": upload.fileSize,
+            "tmpFileName": upload.tmpFileName
+            ])
+            let thisFile = File(upload.tmpFileName)
+            do {
+                let _ = try thisFile.moveTo(path: fileDir.path + upload.fileName, overWrite: true)
+            } catch {
+                print(error)
+            }
+    }
+
+    }
+
+    return id_message
+  }
   public func modifyMessage(_ request: HTTPRequest) -> String {
     let new = Message(
       idMessage: request.param(name: "idMessage")!,
@@ -87,9 +132,8 @@ public class Messages {
     data.append(new)
 
     return toString()
+
   }
-
-
   public func fetchMyMessages(_ request: HTTPRequest) {
     print (request)
     let mySender = request.param(name: "sender")!
@@ -98,7 +142,7 @@ public class Messages {
 
 
 
-    let query: String = "SELECT idMessage, platform, sender, ToM, subject, content, timeToSend, messageStatus FROM Message WHERE sender= '\(mySender)' ORDER BY timeToSend"
+    let query: String = "SELECT idMessage, platform, sender, ToM, subject, content, timeToSend, messageStatus FROM Message WHERE sender= '\(mySender)' ORDER BY idMessage, timeToSend"
 
     _ = mysql.query(statement: query)
     print(query)

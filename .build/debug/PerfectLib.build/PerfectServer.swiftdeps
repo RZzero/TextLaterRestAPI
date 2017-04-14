@@ -6,16 +6,16 @@ provides-nominal:
 provides-member:
 - ["V10PerfectLib13PerfectServer", ""]
 depends-top-level:
-- "String"
-- !private "StringLiteralType"
-- !private "=="
 - !private "setgid"
-- !private "IntegerLiteralType"
-- "PerfectServer"
-- !private "FloatLiteralType"
-- !private "setuid"
+- !private "=="
+- !private "StringLiteralType"
 - !private "getpwnam"
+- "PerfectServer"
 - !private "ThrowSystemError"
+- "String"
+- !private "IntegerLiteralType"
+- !private "setuid"
+- !private "FloatLiteralType"
 depends-member:
 - !private ["Sb", "_getBuiltinLogicValue"]
 - ["Sb", "deinit"]

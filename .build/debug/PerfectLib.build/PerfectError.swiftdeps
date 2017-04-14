@@ -10,23 +10,23 @@ provides-nominal:
 provides-member:
 - ["O10PerfectLib12PerfectError", ""]
 depends-top-level:
-- "StringLiteralType"
-- "String"
-- !private "strerror"
-- "Int32"
-- "ThrowNetworkError"
-- "IntegerLiteralType"
-- "errno"
-- !private "+"
-- "ThrowSystemError"
-- "Never"
-- "FloatLiteralType"
-- "ThrowFileError"
 - "Int"
-- !private "UnicodeScalarType"
 - "Error"
 - !private "__errno_location"
+- "errno"
+- "ThrowNetworkError"
+- "Never"
+- "StringLiteralType"
+- "ThrowSystemError"
+- !private "UnicodeScalarType"
+- "ThrowFileError"
+- "Int32"
 - "PerfectError"
+- "IntegerLiteralType"
+- "FloatLiteralType"
+- !private "+"
+- !private "strerror"
+- "String"
 depends-member:
 - !private ["Sb", "deinit"]
 - !private ["Ps7CVarArg", "pointee"]
